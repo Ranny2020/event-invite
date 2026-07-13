@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserve & Pay | Asfar Fashion Bags</title>
+    <link rel="stylesheet" href="payment.css" />
+  </head>
+  <body>
+    <main class="payment-card">
+      <section class="hero">
+        <h1>Reserve Your Seat</h1>
+        <p>Secure your place at the Asfar Fashion Bags Product Lunch.</p>
+      </section>
+
+      <section class="content">
+        <div class="fee-box">
+          <h2>Entry Fee</h2>
+          <p class="amount">₦5,000</p>
+          <p>Includes lunch, refreshments, and a digital entry ticket.</p>
+        </div>
+
+        <form id="payment-form" class="payment-form">
+          <label>
+            Full name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Email address
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+
+          <label>
+            WhatsApp number
+            <input type="tel" name="phone" placeholder="+234 9053530159" required />
+          </label>
+
+          <label>
+            Ticket delivery
+            <select name="delivery">
+              <option value="email">Email</option>
+              <option value="whatsapp">WhatsApp</option>
+              <option value="both">Email + WhatsApp</option>
+            </select>
+          </label>
+
+          <button type="submit">Pay Entry Fee</button>
+        </form>
+
+        <div id="confirmation" class="confirmation" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script>
+      const form = document.getElementById('payment-form');
+      const confirmation = document.getElementById('confirmation');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const name = form.elements.name.value.trim() || 'guest';
+        const delivery = form.elements.delivery.value;
+        const deliveryText = delivery === 'email'
+          ? 'your email'
+          : delivery === 'whatsapp'
+          ? 'your WhatsApp'
+          : 'your email and WhatsApp';
+
+        confirmation.innerHTML = `
+          <h3>Reservation received</h3>
+          <p>Thank you, ${name}! Your entry fee is ready to be processed, and your ticket will be sent to ${deliveryText} shortly.</p>
+        `;
+        confirmation.classList.add('show');
+      });
+    </script>
+  </body>
+</html>

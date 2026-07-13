@@ -1,0 +1,120 @@
+:root {
+  --navy: #14213d;
+  --gold: #c9a227;
+  --cream: #f8f2e8;
+  --rose: #8d5a4d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5efe6, #fdf8f0);
+  color: var(--navy);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.payment-card {
+  width: 100%;
+  max-width: 720px;
+  background: white;
+  border: 3px solid var(--gold);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(20, 33, 61, 0.15);
+  overflow: hidden;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--gold), #0c0c0c);
+  color: white;
+  padding: 32px 28px 24px;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.hero p {
+  margin: 0;
+  opacity: 0.95;
+}
+
+.content {
+  padding: 28px;
+  background: var(--cream);
+}
+
+.fee-box {
+  background: white;
+  border-left: 5px solid var(--gold);
+  padding: 16px 18px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.amount {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--rose);
+  margin: 6px 0;
+}
+
+.payment-form {
+  display: grid;
+  gap: 14px;
+}
+
+.payment-form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.payment-form input,
+.payment-form select,
+.payment-form button {
+  padding: 12px 14px;
+  border: 1px solid #d8cdb5;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.payment-form button {
+  background: var(--gold);
+  color: white;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.payment-form button:hover {
+  transform: translateY(-1px);
+}
+
+.confirmation {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #fffdf9;
+  border: 1px dashed var(--gold);
+  display: none;
+}
+
+.confirmation.show {
+  display: block;
+}
+
+.confirmation h3 {
+  margin-top: 0;
+  color: var(--rose);
+}
